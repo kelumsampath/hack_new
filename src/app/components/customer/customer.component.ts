@@ -24,8 +24,8 @@ export class CustomerComponent{
         this.lat = +pos.coords.latitude;
       });
     }
-    this.origin = { lat: 51.678430, lng: 6.809009 }
-  this.destination = { lat: 51.678418, lng: 7.809007 }
+    //this.origin = { lat: 51.678430, lng: 6.809009 }
+    //this.destination = { lat: 51.678418, lng: 7.809007 }
   }
   mapClicked($event: MouseEvent) {
       this.origin.lat = $event.coords.lat;
