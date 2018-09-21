@@ -14,13 +14,13 @@ export class AuthService {
   registerUser(user){
     let headers = new Headers();
     headers.append('content-Type','application/json');
-    return this.http.post("http://localhost:3000/register",user,{headers:headers}).map(res=>res.json());
+    return this.http.post("http://172.22.170.77:3000/register",user,{headers:headers}).map(res=>res.json());
   };
 
   loginUser(user){
     let headers = new Headers();
     headers.append('content-Type','application/json');
-    return this.http.post("http://localhost:3000/login",user,{headers:headers}).map(res=>res.json());
+    return this.http.post("http://172.22.170.77:3000/login",user,{headers:headers}).map(res=>res.json());
   };
 
   storeData(token,userdata){
@@ -35,7 +35,7 @@ getprofile(){
   let headers = new Headers();
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
-  return this.http.get("http://localhost:3000/profile",{headers:headers}).map(res=>res.json());
+  return this.http.get("http://172.22.170.77:3000/profile",{headers:headers}).map(res=>res.json());
   
 };
 fetchtoken(){
@@ -52,7 +52,7 @@ logOut(){
   this.authtoken = null;
   this.user = null;
   localStorage.clear();
-  return this.http.get("http://localhost:3000/logout",{headers:headers}).map(res=>res.json()); 
+  return this.http.get("http://172.22.170.77:3000/logout",{headers:headers}).map(res=>res.json()); 
 }
 
 loggedIn(){
@@ -65,7 +65,7 @@ postjob(job){
   let headers = new Headers();
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
-  return this.http.post("http://localhost:3000/job/jobpost",job,{headers:headers}).map(res=>res.json());
+  return this.http.post("http://172.22.170.77:3000/job/jobpost",job,{headers:headers}).map(res=>res.json());
 }
 
 getalljobposts(){
@@ -73,7 +73,7 @@ getalljobposts(){
   let headers = new Headers();
   //headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
-  return this.http.post("http://localhost:3000/job/getalljobs",{headers:headers}).map(res=>res.json());
+  return this.http.post("http://172.22.170.77:3000/job/getalljobs",{headers:headers}).map(res=>res.json());
 }
 
 getjobpost(postid){
@@ -81,7 +81,7 @@ getjobpost(postid){
   let headers = new Headers();
   //headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
-  return this.http.post("http://localhost:3000/job/viewjob",postid,{headers:headers}).map(res=>res.json());
+  return this.http.post("http://172.22.170.77:3000/job/viewjob",postid,{headers:headers}).map(res=>res.json());
 }
 
 adminalljobposts(){
@@ -89,7 +89,7 @@ adminalljobposts(){
   let headers = new Headers();
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
-  return this.http.post("http://localhost:3000/job/adminalljobs",{headers:headers}).map(res=>res.json());
+  return this.http.post("http://172.22.170.77:3000/job/adminalljobs",{headers:headers}).map(res=>res.json());
 }
 
 acceptpost(review){
@@ -97,7 +97,7 @@ acceptpost(review){
   let headers = new Headers();
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
-  return this.http.post("http://localhost:3000/admin/acceptpost",review,{headers:headers}).map(res=>res.json());
+  return this.http.post("http://172.22.170.77:3000/admin/acceptpost",review,{headers:headers}).map(res=>res.json());
 }
 
 rejectpost(review){
@@ -105,7 +105,7 @@ rejectpost(review){
   let headers = new Headers();
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
-  return this.http.post("http://localhost:3000/admin/rejectpost",review,{headers:headers}).map(res=>res.json());
+  return this.http.post("http://172.22.170.77:3000/admin/rejectpost",review,{headers:headers}).map(res=>res.json());
 }
 
 pendingpost(review){
@@ -113,7 +113,7 @@ pendingpost(review){
   let headers = new Headers();
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
-  return this.http.post("http://localhost:3000/admin/pendingpost",review,{headers:headers}).map(res=>res.json());
+  return this.http.post("http://172.22.170.77:3000/admin/pendingpost",review,{headers:headers}).map(res=>res.json());
 }
 
 }
