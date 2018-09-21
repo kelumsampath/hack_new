@@ -1,0 +1,8 @@
+.card{
+    border-radius: 10px;
+    background-color:rgba(255, 255, 255, 0.8);
+    margin: auto;
+}
+.card-header{
+    text-align: center;
+}

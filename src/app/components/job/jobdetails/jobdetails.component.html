@@ -1,0 +1,19 @@
+<div class="card">
+    <img class="card-img-bottom" src="/assets/location.png" alt="Display Picture" style="margin:auto;;width:80%">
+      <div class="card-header">
+        <h2 class="card-title">Job : {{this.title}}</h2>
+        <h2 class="card-title">Job Date : {{this.date}}</h2>
+        <h2 class="card-title">Job Type : {{this.levelofjob}}</h2>
+        <div *ngIf="this.employeegender=='M'">
+            <h2 class="card-title">Gender preference : Male</h2>
+        </div>
+        <div *ngIf="this.employeegender=='F'">
+            <h2 class="card-title">Gender preference : Female</h2>
+        </div>
+        <h2 class="card-title">Price per Hour : Rs.{{this.priceperhour}}</h2>
+        <h2 class="card-title">Estimated Time : {{this.estimatedtime}} Hours</h2>
+        <h2 class="card-title">No of Cleaners : {{this.numberofcleaners}}</h2>
+        <h2 class="card-title">Location : {{this.joblocation}}</h2>
+      </div>
+      <button type="submit" class="btn btn-primary center-block">Apply</button>
+  </div>

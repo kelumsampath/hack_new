@@ -1,0 +1,58 @@
+<div class="container">
+  <form class="form" #form=ngForm (submit)="jobpost()" style="background-color:rgba(255, 255, 255, 0.8)">
+      <fieldset>
+        <legend style="text-align:center">Post Job</legend>
+          <div class="form-group">
+              <label for="exampleInputPassword1">Job Title :</label>
+              <input type="text" class="form-control" id="jobtitle" placeholder="Enter job title" name="jobtitle" [(ngModel)]="jobtitle" required>
+            </div>
+  
+            <div class="form-group">
+                <label for="exampleInputPassword1">Gender Preference :</label><br>
+                <input type="radio" class="" id="gender" name="gender" [(ngModel)]="gender" value="Male" required>Male<br>
+                <input type="radio" class="" id="gender" name="gender" [(ngModel)]="gender" value="Female" required>Female<br>
+              </div>
+  
+            <div class="form-group">
+                <label for="exampleInputPassword1">price per hour :</label>
+                <input type="Number" class="form-control" id="priceperhour" placeholder="Price per hour" name="priceperhour" [(ngModel)]="priceperhour" required>
+              </div>
+  
+            <div class="form-group">
+                <label for="exampleInputPassword1">Estimated time :</label><br>
+                <input type="radio" class="" id="estimatedtime" name="estimatedtime" [(ngModel)]="estimatedtime" value="2" required>2 Hour<br>
+                <input type="radio" class="" id="estimatedtime" name="estimatedtime" [(ngModel)]="estimatedtime" value="5" required>5 Hour<br>
+                <input type="radio" class="" id="estimatedtime" name="estimatedtime" [(ngModel)]="estimatedtime" value="8" required>8 Hour<br>
+                <input type="radio" class="" id="estimatedtime" name="estimatedtime" [(ngModel)]="estimatedtime" value="other" required>Other<br>
+              </div>
+
+              <div class="form-group">
+                  <label for="exampleInputPassword1">level of job :</label><br>
+                  <input type="radio" class="" id="levelofjob" name="levelofjob" [(ngModel)]="levelofjob" value="easy" required>Easy<br>
+                  <input type="radio" class="" id="levelofjob" name="levelofjob" [(ngModel)]="levelofjob" value="medium" required>Medium<br>
+                  <input type="radio" class="" id="levelofjob" name="levelofjob" [(ngModel)]="levelofjob" value="hard" required>Hard<br>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Number of cleaners :</label>
+                    <input type="Number" class="form-control" id="numberofcleaners" placeholder="Number of cleaners" name="numberofcleaners" [(ngModel)]="numberofcleaners" required>
+                  </div>
+          <div class="form-group">
+                <label for="exampleInputPassword1">Start time :</label>
+                <input type="time" class="form-control" id="timeforstart" placeholder="00:00" name="timeforstart" [(ngModel)]="timeforstart" required>
+          </div>
+  
+          <div class="form-group">
+              <label for="exampleInputPassword1">Job location :</label>
+              <input type="text" class="form-control" id="joblocation" placeholder="Job location" name="joblocation" [(ngModel)]="joblocation" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="exampleInputPassword1">Job Date :</label>
+              <input type="date" class="form-control" id="jobdate" placeholder="Job date" name="jobdate" [(ngModel)]="jobdate" required>
+            </div>
+  
+        <button type="submit" class="btn btn-primary center-block" [disabled]="!form.valid">Submit</button>
+      </fieldset>
+    </form>
+  </div> 

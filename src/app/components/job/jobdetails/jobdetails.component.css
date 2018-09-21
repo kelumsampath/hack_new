@@ -1,0 +1,23 @@
+.card{
+    padding: 5%;
+    border-radius: 10px;
+    background-color:rgba(255, 255, 255, 0.8);
+    width: 50%;
+    margin-left: 25%;
+}
+.card-header{
+    margin-left: 5%;
+    text-align: left;
+}
+button{
+    margin-top: 10px;
+    color: rgba(0,0,0,0.8);
+    border-color: rgba(0,0,0,0.8);
+    background-color:rgba(255,255,255,0.85);
+    font-weight: bold;
+}
+button:hover{
+    border-color: rgba(0,0,0,0.9);
+    background-color:rgba(255,255,255,0.85);
+    color: rgb(79,191,219);
+}

@@ -1,0 +1,23 @@
+form{
+    border-radius: 10px;
+    margin: 14%;
+    background-color:rgba(255, 255, 255, 0.8);
+}
+legend{
+    text-align: center;
+    font-weight: bold;
+}
+label{
+    margin-left: 15px;
+}
+button{
+    color: rgba(0,0,0,0.8);
+    border-color: rgba(0,0,0,0.8);
+    background-color:rgba(255,255,255,0.85);
+    font-weight: bold;
+}
+button:hover{
+    border-color: rgba(0,0,0,0.9);
+    background-color:rgba(255,255,255,0.85);
+    color: rgb(79,191,219);
+}

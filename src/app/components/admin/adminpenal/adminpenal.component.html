@@ -1,0 +1,53 @@
+<div class="outerbox" style="background-color:rgba(255, 255, 255, 0.8)">
+    <h2>All JOB POSTS</h2>
+  <div id="menuitem">
+    <ul *ngFor="let jobs of job">
+       <li *ngIf="jobs.status=='accepted'">
+         <div   class="add accepted">
+         <div id="menu">
+         
+         <h1> {{ jobs.title }}</h1>
+         <h1> {{ jobs.joblocation }}</h1>
+         <button [routerLink]="['/adminpanel',jobs.postid]" class="btn btn-info btn-lg">View job</button><br>
+        </div>
+        <div class="statusbtn">
+            <button (click)="accept(jobs.postid)" class="btn btn-success" *ngIf="jobs.status!='accepted'">Accept</button>
+            <button (click)="reject(jobs.postid)" class="btn btn-danger" *ngIf="jobs.status!='rejected'">Reject</button>
+            <button (click)="pending(jobs.postid)" class="btn btn-warning" *ngIf="jobs.status!='pending'">Pending</button>
+        </div>
+      </div>
+       </li>
+
+       <li *ngIf="jobs.status=='rejected'">
+          <div   class="add rejected">
+          <div id="menu">
+          
+          <h1> {{ jobs.title }}</h1>
+          <h1> {{ jobs.joblocation }}</h1>
+          <button [routerLink]="['/adminpanel',jobs.postid]" class="btn btn-info btn-lg">View job</button><br>
+         </div>
+         <div class="statusbtn">
+             <button (click)="accept(jobs.postid)" class="btn btn-success" *ngIf="jobs.status!='accepted'">Accept</button>
+             <button (click)="reject(jobs.postid)" class="btn btn-danger" *ngIf="jobs.status!='rejected'">Reject</button>
+             <button (click)="pending(jobs.postid)" class="btn btn-warning" *ngIf="jobs.status!='pending'">Pending</button>
+         </div>
+       </div>
+        </li>
+
+        <li *ngIf="jobs.status=='pending'">
+            <div   class="add pending">
+            <div id="menu">
+            
+            <h1> {{ jobs.title }}</h1>
+            <button [routerLink]="['/adminpanel',jobs.postid]" class="btn btn-info btn-lg">View job</button><br>
+           </div>
+           <div class="statusbtn">
+               <button (click)="accept(jobs.postid)" class="btn btn-success" *ngIf="jobs.status!='accepted'">Accept</button>
+               <button (click)="reject(jobs.postid)" class="btn btn-danger" *ngIf="jobs.status!='rejected'">Reject</button>
+               <button (click)="pending(jobs.postid)" class="btn btn-warning" *ngIf="jobs.status!='pending'">Pending</button>
+           </div>
+         </div>
+          </li>
+    </ul>
+  </div>
+  </div>

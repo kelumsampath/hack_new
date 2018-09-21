@@ -1,0 +1,16 @@
+<div class="outerbox">
+  <h2 class="name">All Job Post</h2>
+<div id="menuitem">
+  <ul *ngFor="let jobs of job">
+     <li>
+       <button class="add" [routerLink]="['/viewjobs',jobs.postid]">
+       <div id="menu">
+       
+       <h1 style="font-size:8mm"> {{ jobs.title }}</h1>
+       <h1 style="font-size:4mm"> {{ jobs.joblocation }}</h1>
+      </div>
+       </button>
+     </li>
+  </ul>
+</div>
+</div> 
