@@ -18,6 +18,9 @@ import { ViewjobsComponent } from './components/job/viewjobs/viewjobs.component'
 import { JobdetailsComponent } from './components/job/jobdetails/jobdetails.component';
 import { AdminpenalComponent } from './components/admin/adminpenal/adminpenal.component';
 import { HomeComponent } from './components/home/home.component';
+import { CustomerComponent } from './components/customer/customer.component';
+import { AgmCoreModule } from '@agm/core';
+import { AgmDirectionModule } from 'agm-direction';
 
 const applicationRoutes:Routes = [
   {path:'home',component:HomeComponent},
@@ -30,6 +33,7 @@ const applicationRoutes:Routes = [
   {path:'adminpanel',component:AdminpenalComponent, canActivate: [AuthGuard]},
   {path:'adminpanel/:postid',component:JobdetailsComponent, canActivate: [AuthGuard]},
   {path:'',redirectTo:'/home',pathMatch:'full'},
+  {path:'customer',component:CustomerComponent},
 ];
 
 @NgModule({
@@ -43,14 +47,19 @@ const applicationRoutes:Routes = [
     ViewjobsComponent,
     JobdetailsComponent,
     AdminpenalComponent,
-    HomeComponent
+    HomeComponent,
+    CustomerComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     FormsModule,
     RouterModule.forRoot(applicationRoutes),
-    NgFlashMessagesModule.forRoot()
+    NgFlashMessagesModule.forRoot(),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDPgTenpyxgINlk2MhxP5b_3a-w1ZOIAOw'
+    }),
+    AgmDirectionModule
   ],
   providers: [AuthService,AuthGuard],
   bootstrap: [AppComponent]
