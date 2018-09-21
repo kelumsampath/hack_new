@@ -29,6 +29,7 @@ registerData(){
   const user={
     fullname:this.fullname,
     username:this.username,
+    
     email:this.email,
     phoneno:this.phoneno,
     password:this.password,

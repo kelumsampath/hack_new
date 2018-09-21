@@ -5,7 +5,7 @@
 }
 body{
     position: relative;
-    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.4)),url("/../assets/cleaning-service.jpg");
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.4)),url("/../assets/1.jpg");
     height: 100vh;
     background-position: center;
     background-size: cover; 
