@@ -1,0 +1,12 @@
+
+<agm-map [latitude]="lat" [longitude]="lng" (mapClick)="mapClicked($event)" [zoom]="17" >
+  <agm-marker [latitude]="lat" [longitude]="lng" label="Start ride"  [markerDraggable]="true"
+  (dragEnd)="markerDragEnd(m, $event)">Start</agm-marker>
+  <agm-marker [latitude]="lat2" [longitude]="lng2" label="end ride"  [markerDraggable]="true"
+  (dragEnd)="markerDragEnd2(m, $event)">Start</agm-marker>
+  <agm-direction [origin]="{lat:'51.673858' , lng:'7.815982'}" [destination]="{lat:'6.931459342035852' , lng:'79.85955990450748'}">
+  </agm-direction>
+</agm-map>
+<div style="text-align:center;">
+<button class="btn btn-success" (click)="sendrout()">Send My Route</button>
+</div>

@@ -5,6 +5,9 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { NgFlashMessagesModule } from 'ng-flash-messages';
 
+        
+import { AgmDirectionModule } from 'agm-direction';
+
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/user/login/login.component';
@@ -18,6 +21,8 @@ import { ViewjobsComponent } from './components/job/viewjobs/viewjobs.component'
 import { JobdetailsComponent } from './components/job/jobdetails/jobdetails.component';
 import { AdminpenalComponent } from './components/admin/adminpenal/adminpenal.component';
 import { HomeComponent } from './components/home/home.component';
+import { AgmCoreModule } from '@agm/core';
+import { DriverpanelComponent } from './components/driverpanel/driverpanel.component';
 
 const applicationRoutes:Routes = [
   {path:'home',component:HomeComponent},
@@ -30,6 +35,7 @@ const applicationRoutes:Routes = [
   {path:'adminpanel',component:AdminpenalComponent, canActivate: [AuthGuard]},
   {path:'adminpanel/:postid',component:JobdetailsComponent, canActivate: [AuthGuard]},
   {path:'',redirectTo:'/home',pathMatch:'full'},
+  {path:'driverpanel',component:DriverpanelComponent},
 ];
 
 @NgModule({
@@ -43,16 +49,24 @@ const applicationRoutes:Routes = [
     ViewjobsComponent,
     JobdetailsComponent,
     AdminpenalComponent,
-    HomeComponent
+    HomeComponent,
+    DriverpanelComponent,
+    
   ],
   imports: [
     BrowserModule,
     HttpModule,
     FormsModule,
     RouterModule.forRoot(applicationRoutes),
-    NgFlashMessagesModule.forRoot()
+    NgFlashMessagesModule.forRoot(),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDPgTenpyxgINlk2MhxP5b_3a-w1ZOIAOw'
+    }),
+    AgmDirectionModule
   ],
   providers: [AuthService,AuthGuard],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+ 
+}
